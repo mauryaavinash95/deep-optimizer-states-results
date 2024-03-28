@@ -1,0 +1,1138 @@
+[2024-03-28 16:14:54,715] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-03-28 16:14:58,201] [INFO] [runner.py:463:main] Using IP address of 10.140.57.102 for node x3006c0s25b0n0.hsn.cm.polaris.alcf.anl.gov
+[2024-03-28 16:14:58,201] [INFO] [runner.py:568:main] cmd = /home/am6429/.conda/envs/dspeed_env/bin/python -u -m deepspeed.launcher.launch --world_info=eyJ4MzAwNmMwczI1YjBuMC5oc24uY20ucG9sYXJpcy5hbGNmLmFubC5nb3YiOiBbMCwgMV19 --master_addr=10.140.57.102 --master_port=29700 --enable_each_rank_log=None /home/am6429/dl-io/Megatron-DeepSpeed//pretrain_gpt.py --tensor-model-parallel-size 1 --num-layers 32 --hidden-size 4096 --num-attention-heads 32 --micro-batch-size 4 --global-batch-size 8 --seq-length 2048 --max-position-embeddings 2048 --train-iters 10 --save /local/scratch/llama2/zero3-tp1}_dp2 --data-path /home/am6429/dl-io/datasets/meg-gpt2_text_document --vocab-file /home/am6429/dl-io/datasets/gpt2-vocab.json --merge-file /home/am6429/dl-io/datasets/gpt2-merges.txt --data-impl mmap --tokenizer-type GPTSentencePieceTokenizer --tokenizer-model /home/am6429/dl-io/datasets/tokenizer.model --split 949,50,1 --distributed-backend nccl --lr 3e-4 --lr-decay-style cosine --min-lr 3e-5 --weight-decay 0.1 --clip-grad 1 --lr-warmup-iters 1 --optimizer adam --adam-beta1 0.9 --adam-beta2 0.95 --log-interval 1 --save-interval 1000 --eval-interval 1000 --eval-iters 0 --bf16 --no-query-key-layer-scaling --attention-dropout 0 --hidden-dropout 0 --use-rotary-position-embeddings --untie-embeddings-and-output-weights --swiglu --normalization rmsnorm --disable-bias-linear --num-key-value-heads 4 --deepspeed --exit-interval 20 --deepspeed_config=/home/am6429/dl-io/dl-io-outputs/act-output-7B//ds_config.json --zero-stage=3 --no-pipeline-parallel --cpu-optimizer --checkpoint-activations --deepspeed-activation-checkpointing
+[2024-03-28 16:14:59,862] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-03-28 16:15:01,766] [INFO] [launch.py:145:main] WORLD INFO DICT: {'x3006c0s25b0n0.hsn.cm.polaris.alcf.anl.gov': [0, 1]}
+[2024-03-28 16:15:01,766] [INFO] [launch.py:151:main] nnodes=1, num_local_procs=2, node_rank=0
+[2024-03-28 16:15:01,766] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'x3006c0s25b0n0.hsn.cm.polaris.alcf.anl.gov': [0, 1]})
+[2024-03-28 16:15:01,766] [INFO] [launch.py:163:main] dist_world_size=2
+[2024-03-28 16:15:01,766] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2024-03-28 16:15:01,767] [INFO] [launch.py:253:main] process 17996 spawned with command: ['/home/am6429/.conda/envs/dspeed_env/bin/python', '-u', '/home/am6429/dl-io/Megatron-DeepSpeed//pretrain_gpt.py', '--local_rank=0', '--tensor-model-parallel-size', '1', '--num-layers', '32', '--hidden-size', '4096', '--num-attention-heads', '32', '--micro-batch-size', '4', '--global-batch-size', '8', '--seq-length', '2048', '--max-position-embeddings', '2048', '--train-iters', '10', '--save', '/local/scratch/llama2/zero3-tp1}_dp2', '--data-path', '/home/am6429/dl-io/datasets/meg-gpt2_text_document', '--vocab-file', '/home/am6429/dl-io/datasets/gpt2-vocab.json', '--merge-file', '/home/am6429/dl-io/datasets/gpt2-merges.txt', '--data-impl', 'mmap', '--tokenizer-type', 'GPTSentencePieceTokenizer', '--tokenizer-model', '/home/am6429/dl-io/datasets/tokenizer.model', '--split', '949,50,1', '--distributed-backend', 'nccl', '--lr', '3e-4', '--lr-decay-style', 'cosine', '--min-lr', '3e-5', '--weight-decay', '0.1', '--clip-grad', '1', '--lr-warmup-iters', '1', '--optimizer', 'adam', '--adam-beta1', '0.9', '--adam-beta2', '0.95', '--log-interval', '1', '--save-interval', '1000', '--eval-interval', '1000', '--eval-iters', '0', '--bf16', '--no-query-key-layer-scaling', '--attention-dropout', '0', '--hidden-dropout', '0', '--use-rotary-position-embeddings', '--untie-embeddings-and-output-weights', '--swiglu', '--normalization', 'rmsnorm', '--disable-bias-linear', '--num-key-value-heads', '4', '--deepspeed', '--exit-interval', '20', '--deepspeed_config=/home/am6429/dl-io/dl-io-outputs/act-output-7B//ds_config.json', '--zero-stage=3', '--no-pipeline-parallel', '--cpu-optimizer', '--checkpoint-activations', '--deepspeed-activation-checkpointing']
+[2024-03-28 16:15:01,768] [INFO] [launch.py:253:main] process 17997 spawned with command: ['/home/am6429/.conda/envs/dspeed_env/bin/python', '-u', '/home/am6429/dl-io/Megatron-DeepSpeed//pretrain_gpt.py', '--local_rank=1', '--tensor-model-parallel-size', '1', '--num-layers', '32', '--hidden-size', '4096', '--num-attention-heads', '32', '--micro-batch-size', '4', '--global-batch-size', '8', '--seq-length', '2048', '--max-position-embeddings', '2048', '--train-iters', '10', '--save', '/local/scratch/llama2/zero3-tp1}_dp2', '--data-path', '/home/am6429/dl-io/datasets/meg-gpt2_text_document', '--vocab-file', '/home/am6429/dl-io/datasets/gpt2-vocab.json', '--merge-file', '/home/am6429/dl-io/datasets/gpt2-merges.txt', '--data-impl', 'mmap', '--tokenizer-type', 'GPTSentencePieceTokenizer', '--tokenizer-model', '/home/am6429/dl-io/datasets/tokenizer.model', '--split', '949,50,1', '--distributed-backend', 'nccl', '--lr', '3e-4', '--lr-decay-style', 'cosine', '--min-lr', '3e-5', '--weight-decay', '0.1', '--clip-grad', '1', '--lr-warmup-iters', '1', '--optimizer', 'adam', '--adam-beta1', '0.9', '--adam-beta2', '0.95', '--log-interval', '1', '--save-interval', '1000', '--eval-interval', '1000', '--eval-iters', '0', '--bf16', '--no-query-key-layer-scaling', '--attention-dropout', '0', '--hidden-dropout', '0', '--use-rotary-position-embeddings', '--untie-embeddings-and-output-weights', '--swiglu', '--normalization', 'rmsnorm', '--disable-bias-linear', '--num-key-value-heads', '4', '--deepspeed', '--exit-interval', '20', '--deepspeed_config=/home/am6429/dl-io/dl-io-outputs/act-output-7B//ds_config.json', '--zero-stage=3', '--no-pipeline-parallel', '--cpu-optimizer', '--checkpoint-activations', '--deepspeed-activation-checkpointing']
+[2024-03-28 16:15:03,510] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-03-28 16:15:03,526] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+--------------------------------------------------
+DeepSpeed C++/CUDA extension op report
+--------------------------------------------------
+NOTE: Ops not installed will be just-in-time (JIT) compiled at
+      runtime if needed. Op compatibility means that your system
+      meet the required dependencies to JIT install the op.
+--------------------------------------------------
+JIT compiled ops requires ninja
+--------------------------------------------------
+DeepSpeed C++/CUDA extension op report
+--------------------------------------------------
+NOTE: Ops not installed will be just-in-time (JIT) compiled at
+      runtime if needed. Op compatibility means that your system
+      meet the required dependencies to JIT install the op.
+--------------------------------------------------
+JIT compiled ops requires ninja
+ninja ninja..................  ..................[92m[OKAY][0m 
+[92m[OKAY][0m
+--------------------------------------------------
+--------------------------------------------------
+op name op name................  ................installed  installed..  ..compatible 
+compatible
+----------------------------------------------------------------------------------------------------
+
+async_copier ...........async_copier  [92m[YES][0m...........  ......[92m[YES][0m  [92m[OKAY][0m......
+ [92m[OKAY][0m
+async_io ............... [93m[NO][0m ....... [92m[OKAY][0m
+fused_adam ............. [93m[NO][0m ....... [92m[OKAY][0m
+cpu_adam ............... [93m[NO][0m ....... [92m[OKAY][0m
+cpu_adagrad ............ [93m[NO][0m ....... [92m[OKAY][0m
+cpu_lion ............... [93m[NO][0m ....... [92m[OKAY][0m
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+evoformer_attn ......... [93m[NO][0m ....... [93m[NO][0m
+fused_lamb ............. [93m[NO][0m ....... [92m[OKAY][0m
+fused_lion ............. [93m[NO][0m ....... [92m[OKAY][0m
+async_io ............... [93m[NO][0m ....... [92m[OKAY][0m
+fused_adam ............. [93m[NO][0m ....... [92m[OKAY][0m
+cpu_adam ............... [93m[NO][0m ....... [92m[OKAY][0m
+cpu_adagrad ............ [93m[NO][0m ....... [92m[OKAY][0m
+cpu_lion ............... [93m[NO][0m ....... [92m[OKAY][0m
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+evoformer_attn ......... [93m[NO][0m ....... [93m[NO][0m
+fused_lamb ............. [93m[NO][0m ....... [92m[OKAY][0m
+fused_lion ............. [93m[NO][0m ....... [92m[OKAY][0m
+inference_core_ops ..... [93m[NO][0m ....... [92m[OKAY][0m
+inference_core_ops ..... [93m[NO][0m ....... [92m[OKAY][0m
+cutlass_ops ............ [93m[NO][0m ....... [92m[OKAY][0m
+cutlass_ops ............ [93m[NO][0m ....... [92m[OKAY][0m
+transformer_inference .. [93m[NO][0m ....... [92m[OKAY][0m
+quantizer .............. [93m[NO][0m ....... [92m[OKAY][0m
+transformer_inference .. [93m[NO][0m ....... [92m[OKAY][0m
+quantizer .............. [93m[NO][0m ....... [92m[OKAY][0m
+ragged_device_ops ...... [93m[NO][0m ....... [92m[OKAY][0m
+ragged_device_ops ...... [93m[NO][0m ....... [92m[OKAY][0m
+ragged_ops ............. [93m[NO][0m ....... [92m[OKAY][0m
+random_ltd ............. [93m[NO][0m ....... [92m[OKAY][0m
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.0
+[93m [WARNING] [0m using untested triton version (2.0.0), only 1.0.0 is known to be compatible
+sparse_attn ............ [93m[NO][0m ....... [93m[NO][0m
+ragged_ops ............. [93m[NO][0m ....... [92m[OKAY][0m
+random_ltd ............. [93m[NO][0m ....... [92m[OKAY][0m
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.0
+[93m [WARNING] [0m using untested triton version (2.0.0), only 1.0.0 is known to be compatible
+sparse_attn ............ [93m[NO][0m ....... [93m[NO][0m
+spatial_inference ...... [93m[NO][0m ....... [92m[OKAY][0m
+transformer ............ [93m[NO][0m ....... [92m[OKAY][0m
+stochastic_transformer . [93m[NO][0m ....... [92m[OKAY][0m
+--------------------------------------------------
+spatial_inference ...... [93m[NO][0m ....... [92m[OKAY][0m
+transformer ............ [93m[NO][0m ....... [92m[OKAY][0m
+stochastic_transformer . [93m[NO][0m ....... [92m[OKAY][0m
+--------------------------------------------------
+DeepSpeed general environment info:
+torch install path ............... ['/home/am6429/.conda/envs/dspeed_env/lib/python3.10/site-packages/torch']
+torch version .................... 2.0.1+cu118
+deepspeed install path ........... ['/home/am6429/.conda/envs/dspeed_env/lib/python3.10/site-packages/deepspeed']
+deepspeed info ................... 0.13.3+8074cd62, 8074cd62, hybrid_opt_offload
+torch cuda version ............... 11.8
+torch hip version ................ None
+nvcc version ..................... 11.8
+deepspeed wheel compiled w. ...... torch 2.0, cuda 11.8
+shared memory (/dev/shm) size .... 251.61 GB
+DeepSpeed general environment info:
+torch install path ............... ['/home/am6429/.conda/envs/dspeed_env/lib/python3.10/site-packages/torch']
+torch version .................... 2.0.1+cu118
+deepspeed install path ........... ['/home/am6429/.conda/envs/dspeed_env/lib/python3.10/site-packages/deepspeed']
+deepspeed info ................... 0.13.3+8074cd62, 8074cd62, hybrid_opt_offload
+torch cuda version ............... 11.8
+torch hip version ................ None
+nvcc version ..................... 11.8
+deepspeed wheel compiled w. ...... torch 2.0, cuda 11.8
+shared memory (/dev/shm) size .... 251.61 GB
+**** Git info for Megatron: git_hash=248aa6f git_branch=HEAD ****
+**** Git info for Megatron: git_hash=248aa6f git_branch=HEAD ****
+INFO: overriding default arguments for tokenizer_type:GPTSentencePieceTokenizer                    with tokenizer_type:GPT2BPETokenizer
+using world size: 2, data-parallel-size: 2, sequence-parallel size: 1, tensor-model-parallel size: 1, pipeline-model-parallel size: 1 
+accumulate and all-reduce gradients in fp32 for bfloat16 data type.
+using torch.bfloat16 for parameters ...
+------------------------ arguments ------------------------
+  accumulate_allreduce_grads_in_fp32 .............. True
+  adam_beta1 ...................................... 0.9
+  adam_beta2 ...................................... 0.95
+  adam_eps ........................................ 1e-08
+  add_bias_linear ................................. False
+  add_position_embedding .......................... False
+  adlr_autoresume ................................. False
+  adlr_autoresume_interval ........................ 1000
+  aml_data_download_path .......................... None
+  apply_layernorm_1p .............................. False
+  apply_query_key_layer_scaling ................... False
+  apply_residual_connection_post_layernorm ........ False
+  async_tensor_model_parallel_allreduce ........... False
+  attention_dropout ............................... 0.0
+  attention_softmax_in_fp32 ....................... False
+  barrier_with_L1_time ............................ True
+  bert_binary_head ................................ True
+  bert_embedder_type .............................. megatron
+  bert_load ....................................... None
+  bf16 ............................................ True
+  bias_dropout_fusion ............................. True
+  bias_gelu_fusion ................................ False
+  biencoder_projection_dim ........................ 0
+  biencoder_shared_query_context_model ............ False
+  block_data_path ................................. None
+  checkpoint_activations .......................... True
+  checkpoint_in_cpu ............................... False
+  checkpoint_num_layers ........................... 1
+  classes_fraction ................................ 1.0
+  clip_grad ....................................... 1.0
+  compression_training ............................ False
+  consumed_train_samples .......................... 0
+  consumed_train_tokens ........................... 0
+  consumed_valid_samples .......................... 0
+  contigious_checkpointing ........................ False
+  cpu_optimizer ................................... True
+  cpu_torch_adam .................................. False
+  create_moe_param_group .......................... False
+  curriculum_learning_legacy ...................... False
+  data_cache_path ................................. None
+  data_efficiency_curriculum_learning ............. False
+  data_impl ....................................... mmap
+  data_parallel_random_init ....................... False
+  data_parallel_size .............................. 2
+  data_path ....................................... ['/home/am6429/dl-io/datasets/meg-gpt2_text_document']
+  data_per_class_fraction ......................... 1.0
+  data_sharding ................................... True
+  dataloader_type ................................. single
+  DDP_impl ........................................ local
+  decoder_num_layers .............................. None
+  decoder_seq_length .............................. None
+  deepscale ....................................... False
+  deepscale_config ................................ None
+  deepspeed ....................................... True
+  deepspeed_activation_checkpointing .............. True
+  deepspeed_config ................................ /home/am6429/dl-io/dl-io-outputs/act-output-7B//ds_config.json
+  dino_bottleneck_size ............................ 256
+  dino_freeze_last_layer .......................... 1
+  dino_head_hidden_size ........................... 2048
+  dino_local_crops_number ......................... 10
+  dino_local_img_size ............................. 96
+  dino_norm_last_layer ............................ False
+  dino_teacher_temp ............................... 0.07
+  dino_warmup_teacher_temp ........................ 0.04
+  dino_warmup_teacher_temp_epochs ................. 30
+  distribute_checkpointed_activations ............. False
+  distribute_saved_activations .................... False
+  distributed_backend ............................. nccl
+  distributed_timeout_minutes ..................... 10
+  ds_inference .................................... False
+  ds_pipeline_enabled ............................. False
+  ds_sequence_parallel_size ....................... 1
+  embedding_path .................................. None
+  embedding_weights_in_fp32 ....................... False
+  empty_unused_memory_level ....................... 0
+  enable_expert_tensor_parallelism ................ False
+  encoder_num_layers .............................. 32
+  encoder_seq_length .............................. 2048
+  end_weight_decay ................................ 0.1
+  eod_mask_loss ................................... False
+  eval_interval ................................... 1000
+  eval_iters ...................................... 0
+  evidence_data_path .............................. None
+  exit_duration_in_mins ........................... None
+  exit_interval ................................... 20
+  exit_on_missing_checkpoint ...................... False
+  exit_signal_handler ............................. False
+  expert_interval ................................. 2
+  ffn_hidden_size ................................. 10880
+  finetune ........................................ False
+  force_ds_sequence_parallel ...................... False
+  fp16 ............................................ False
+  fp16_lm_cross_entropy ........................... False
+  fp32_residual_connection ........................ False
+  fp8_amax_compute_algo ........................... most_recent
+  fp8_amax_history_len ............................ 1
+  fp8_e4m3 ........................................ False
+  fp8_hybrid ...................................... False
+  fp8_interval .................................... 1
+  fp8_margin ...................................... 0
+  fp8_wgrad ....................................... True
+  global_batch_size ............................... 8
+  gradient_accumulation_fusion .................... True
+  head_lr_mult .................................... 1.0
+  hidden_dropout .................................. 0.0
+  hidden_size ..................................... 4096
+  hidden_size_teacher ............................. None
+  hysteresis ...................................... 2
+  ict_head_size ................................... None
+  ict_load ........................................ None
+  img_h ........................................... 224
+  img_w ........................................... 224
+  indexer_batch_size .............................. 128
+  indexer_log_interval ............................ 1000
+  inference ....................................... False
+  inference_batch_times_seqlen_threshold .......... 512
+  init_method_std ................................. 0.02
+  init_method_xavier_uniform ...................... False
+  initial_loss_scale .............................. 4294967296
+  iter_per_epoch .................................. 1250
+  kd .............................................. False
+  kd_alpha_ce ..................................... 1
+  kd_beta_ce ...................................... 1
+  kd_temp ......................................... 1.0
+  kv_channels ..................................... 128
+  layernorm_epsilon ............................... 1e-05
+  lazy_mpu_init ................................... None
+  load ............................................ None
+  load_teacher .................................... None
+  local_rank ...................................... 0
+  log_batch_size_to_tensorboard ................... False
+  log_interval .................................... 1
+  log_learning_rate_to_tensorboard ................ True
+  log_loss_scale_to_tensorboard ................... True
+  log_memory_to_tensorboard ....................... False
+  log_num_zeros_in_grad ........................... False
+  log_optimizer_states_to_tensorboard ............. False
+  log_params_norm ................................. False
+  log_timers_to_tensorboard ....................... False
+  log_validation_ppl_to_tensorboard ............... False
+  log_world_size_to_tensorboard ................... False
+  loss_scale ...................................... None
+  loss_scale_window ............................... 1000
+  lr .............................................. 0.0003
+  lr_decay_iters .................................. None
+  lr_decay_samples ................................ None
+  lr_decay_style .................................. cosine
+  lr_decay_tokens ................................. None
+  lr_warmup_fraction .............................. None
+  lr_warmup_iters ................................. 1
+  lr_warmup_samples ............................... 0
+  lr_warmup_tokens ................................ None
+  make_vocab_size_divisible_by .................... 128
+  mask_factor ..................................... 1.0
+  mask_prob ....................................... 0.15
+  mask_type ....................................... random
+  masked_softmax_fusion ........................... True
+  max_position_embeddings ......................... 2048
+  max_tokens_to_oom ............................... 12000
+  memory_centric_tiled_linear ..................... False
+  merge_file ...................................... /home/am6429/dl-io/datasets/gpt2-merges.txt
+  micro_batch_size ................................ 4
+  min_loss_scale .................................. 1.0
+  min_lr .......................................... 3e-05
+  mlp_type ........................................ standard
+  mmap_warmup ..................................... False
+  moe_eval_capacity_factor ........................ 1.0
+  moe_expert_parallel_size ........................ 1
+  moe_loss_coeff .................................. 0.1
+  moe_min_capacity ................................ 4
+  moe_token_dropping .............................. True
+  moe_train_capacity_factor ....................... 1.0
+  mos ............................................. False
+  no_load_lr_state ................................ False
+  no_load_optim ................................... None
+  no_load_rng ..................................... None
+  no_persist_layer_norm ........................... False
+  no_pipeline_parallel ............................ True
+  no_save_optim ................................... None
+  no_save_rng ..................................... None
+  normalization ................................... rmsnorm
+  num_attention_heads ............................. 32
+  num_attention_heads_teacher ..................... None
+  num_channels .................................... 3
+  num_classes ..................................... 1000
+  num_experts ..................................... [1]
+  num_experts_switch .............................. None
+  num_experts_teacher ............................. [1]
+  num_key_value_heads ............................. 4
+  num_layers ...................................... 32
+  num_layers_per_virtual_pipeline_stage ........... None
+  num_layers_teacher .............................. None
+  num_workers ..................................... 2
+  onnx_safe ....................................... None
+  openai_gelu ..................................... False
+  optimizer ....................................... adam
+  output_bert_embeddings .......................... False
+  overlap_p2p_comm ................................ False
+  override_opt_param_scheduler .................... False
+  params_dtype .................................... torch.bfloat16
+  partition_activations ........................... False
+  patch_dim ....................................... 16
+  perform_initialization .......................... True
+  pipeline_model_parallel_size .................... 1
+  pipeline_model_parallel_split_rank .............. None
+  profile_backward ................................ False
+  query_in_block_prob ............................. 0.1
+  rampup_batch_size ............................... None
+  random_ltd ...................................... False
+  rank ............................................ 0
+  recompute_granularity ........................... None
+  recompute_method ................................ None
+  recompute_num_layers ............................ 1
+  remote_device ................................... none
+  reset_attention_mask ............................ False
+  reset_iteration ................................. False
+  reset_position_ids .............................. False
+  retriever_report_topk_accuracies ................ []
+  retriever_score_scaling ......................... False
+  retriever_seq_length ............................ 256
+  retro_add_retriever ............................. False
+  retro_cyclic_train_iters ........................ None
+  retro_encoder_attention_dropout ................. 0.1
+  retro_encoder_hidden_dropout .................... 0.1
+  retro_encoder_layers ............................ 2
+  retro_num_neighbors ............................. 2
+  retro_num_retrieved_chunks ...................... 2
+  retro_return_doc_ids ............................ False
+  retro_workdir ................................... None
+  return_data_index ............................... False
+  rotary_percent .................................. 1.0
+  sample_rate ..................................... 1.0
+  save ............................................ /local/scratch/llama2/zero3-tp1}_dp2
+  save_interval ................................... 1000
+  scatter_gather_tensors_in_pipeline .............. True
+  scattered_embeddings ............................ False
+  seed ............................................ 1234
+  seq_length ...................................... 2048
+  sequence_parallel ............................... False
+  sgd_momentum .................................... 0.9
+  short_seq_prob .................................. 0.1
+  skip_train ...................................... False
+  split ........................................... 949,50,1
+  split_transformers .............................. False
+  squared_relu .................................... False
+  standalone_embedding_stage ...................... False
+  start_weight_decay .............................. 0.1
+  swiglu .......................................... True
+  swin_backbone_type .............................. tiny
+  synchronize_each_layer .......................... False
+  tensor_model_parallel_size ...................... 1
+  tensorboard_dir ................................. None
+  tensorboard_log_interval ........................ 1
+  tensorboard_queue_size .......................... 1000
+  test_data_path .................................. None
+  tile_factor ..................................... 1
+  timing_log_level ................................ 0
+  timing_log_option ............................... minmax
+  titles_data_path ................................ None
+  tokenizer_model ................................. /home/am6429/dl-io/datasets/tokenizer.model
+  tokenizer_type .................................. GPT2BPETokenizer
+  topk ............................................ 1
+  train_data_exact_num_epochs ..................... None
+  train_data_path ................................. None
+  train_desc_path ................................. None
+  train_doc_idx_path .............................. None
+  train_idx_path .................................. None
+  train_iters ..................................... 10
+  train_sample_idx_path ........................... None
+  train_samples ................................... None
+  train_shuffle_idx_path .......................... None
+  train_tokens .................................... None
+  transformer_impl ................................ local
+  transformer_pipeline_model_parallel_size ........ 1
+  untie_embeddings_and_output_weights ............. True
+  use_checkpoint_args ............................. False
+  use_checkpoint_opt_param_scheduler .............. False
+  use_contiguous_buffers_in_local_ddp ............. True
+  use_cpu_initialization .......................... None
+  use_dataset_only ................................ False
+  use_distributed_optimizer ....................... False
+  use_flash_attn .................................. False
+  use_flash_attn_triton ........................... False
+  use_flash_attn_v1 ............................... False
+  use_flash_attn_v2 ............................... False
+  use_one_sent_docs ............................... False
+  use_pin_memory .................................. False
+  use_ring_exchange_p2p ........................... False
+  use_rotary_position_embeddings .................. True
+  use_tutel ....................................... False
+  valid_data_path ................................. None
+  variable_seq_lengths ............................ False
+  virtual_pipeline_model_parallel_size ............ None
+  vision_backbone_type ............................ vit
+  vision_pretraining .............................. False
+  vision_pretraining_type ......................... classify
+  vocab_extra_ids ................................. 0
+  vocab_file ...................................... /home/am6429/dl-io/datasets/gpt2-vocab.json
+  vocab_size ...................................... None
+  weight_decay .................................... 0.1
+  weight_decay_incr_style ......................... constant
+  world_size ...................................... 2
+  zero_allgather_bucket_size ...................... 0.0
+  zero_contigious_gradients ....................... False
+  zero_reduce_bucket_size ......................... 0.0
+  zero_reduce_scatter ............................. False
+  zero_stage ...................................... 3
+-------------------- end of arguments ---------------------
+setting number of micro-batches to constant 1
+> building GPT2BPETokenizer tokenizer ...
+[2024-03-28 16:15:06,328] [INFO] [comm.py:637:init_distributed] cdb=None
+ > padded vocab (size: 50257) with 47 dummy tokens (new size: 50304)
+> initializing torch distributed ...
+[2024-03-28 16:15:06,330] [INFO] [comm.py:637:init_distributed] cdb=None
+[2024-03-28 16:15:06,330] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+> initialized tensor model parallel with size 1
+> initialized pipeline model parallel with size 1
+> setting random seeds to 1234 ...
+[2024-03-28 16:15:07,410] [INFO] [checkpointing.py:227:model_parallel_cuda_manual_seed] > initializing model parallel cuda seeds on global rank 0, model parallel rank 0, and data parallel rank 0 with model parallel seed: 3952 and data parallel seed: 1234
+> compiling dataset index builder ...
+make: Entering directory '/home/am6429/dl-io/Megatron-DeepSpeed/megatron/data'
+make: Nothing to be done for 'default'.
+make: Leaving directory '/home/am6429/dl-io/Megatron-DeepSpeed/megatron/data'
+>>> done with dataset index builder. Compilation time: 0.098 seconds
+> compiling and loading fused kernels ...
+ninja: no work to do.
+ninja: no work to do.
+ninja: no work to do.
+>>> done with compiling and loading fused kernels. Compilation time: 1.804 seconds
+initialize_megatron took 3.793748617172241
+<<<<<<<<<<< 0
+<<<<<<<<<<< 1
+time to initialize megatron (seconds): 4.096
+[after megatron is initialized] datetime: 2024-03-28 16:15:10 
+get_accelerator and all_reduce  took 0.006211042404174805
+building GPT model ...
+[2024-03-28 16:15:10,152] [INFO] [utils.py:800:see_memory_usage] Before Building Model
+[2024-03-28 16:15:10,152] [INFO] [utils.py:801:see_memory_usage] MA 0.0 GB         Max_MA 2.82 GB         CA 0.0 GB         Max_CA 3 GB 
+[2024-03-28 16:15:10,152] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 17.87 GB, percent = 3.6%
+[2024-03-28 16:15:10,470] [INFO] [partition_parameters.py:343:__exit__] finished initializing model - num_params = 227, num_elems = 5.90B
+[2024-03-28 16:15:10,534] [INFO] [utils.py:800:see_memory_usage] After Building Model
+[2024-03-28 16:15:10,535] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.91 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:10,535] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 17.96 GB, percent = 3.6%
+ > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 5898506240
+ninja: no work to do.
+Time to load cpu_adam op: 2.441352128982544 seconds
+Time to load cpu_adam op: 2.4578230381011963 seconds
+Adam Optimizer #0 is created with AVX2 arithmetic capability.
+Config: alpha=0.000300, betas=(0.900000, 0.950000), weight_decay=0.100000, adam_w=1
+Adam Optimizer #0 is created with AVX2 arithmetic capability.
+Config: alpha=0.000300, betas=(0.900000, 0.950000), weight_decay=0.100000, adam_w=1
+> learning rate decay style: cosine
+DeepSpeed is enabled.
+[2024-03-28 16:15:14,931] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.13.3+8074cd62, git-hash=8074cd62, git-branch=hybrid_opt_offload
+[2024-03-28 16:15:14,996] [INFO] [utils.py:800:see_memory_usage] DeepSpeed Engine: After args sanity test
+[2024-03-28 16:15:14,997] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.52 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:14,997] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 21.67 GB, percent = 4.3%
+[2024-03-28 16:15:15,050] [INFO] [utils.py:800:see_memory_usage] DeepSpeed Engine: Before configure distributed model
+[2024-03-28 16:15:15,050] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.52 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:15,050] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 21.67 GB, percent = 4.3%
+[2024-03-28 16:15:15,104] [INFO] [utils.py:800:see_memory_usage] DeepSpeed Engine: After configure distributed model
+[2024-03-28 16:15:15,105] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.52 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:15,105] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 21.67 GB, percent = 4.3%
+[2024-03-28 16:15:15,105] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2024-03-28 16:15:15,154] [INFO] [utils.py:800:see_memory_usage] DeepSpeed Engine: After setting model parameters
+[2024-03-28 16:15:15,155] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.52 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:15,155] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 21.67 GB, percent = 4.3%
+[2024-03-28 16:15:15,204] [INFO] [utils.py:800:see_memory_usage] DeepSpeed Engine: Before configure optimizer
+[2024-03-28 16:15:15,205] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.52 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:15,205] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 21.67 GB, percent = 4.3%
+[2024-03-28 16:15:15,205] [INFO] [logging.py:96:log_dist] [Rank 0] Using client Optimizer as basic optimizer
+[2024-03-28 16:15:15,205] [INFO] [logging.py:96:log_dist] [Rank 0] Removing param_group that has no 'params' in the basic Optimizer
+[2024-03-28 16:15:15,211] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = DeepSpeedCPUAdam
+[2024-03-28 16:15:15,211] [INFO] [utils.py:56:is_zero_supported_optimizer] Checking ZeRO support for optimizer=DeepSpeedCPUAdam type=<class 'deepspeed.ops.adam.cpu_adam.DeepSpeedCPUAdam'>
+[2024-03-28 16:15:15,211] [INFO] [logging.py:96:log_dist] [Rank 0] Creating fp16 ZeRO stage 3 optimizer, MiCS is enabled False, Hierarchical params gather False
+[2024-03-28 16:15:15,211] [INFO] [logging.py:96:log_dist] [Rank 0] Creating torch.bfloat16 ZeRO stage 3 optimizer
+[2024-03-28 16:15:15,260] [INFO] [utils.py:800:see_memory_usage] Stage 3 initialize beginning
+[2024-03-28 16:15:15,260] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.52 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:15,260] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 21.67 GB, percent = 4.3%
+[2024-03-28 16:15:15,261] [INFO] [stage3.py:137:__init__] Reduce bucket size 500,000,000
+[2024-03-28 16:15:15,261] [INFO] [stage3.py:138:__init__] Prefetch bucket size 50,000,000
+[2024-03-28 16:15:15,311] [INFO] [utils.py:800:see_memory_usage] DeepSpeedZeRoOffload initialize [begin]
+[2024-03-28 16:15:15,311] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.52 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:15,311] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 21.67 GB, percent = 4.3%
+Parameter Offload: Total persistent parameters: 266240 in 65 params
+[2024-03-28 16:15:15,373] [INFO] [utils.py:800:see_memory_usage] DeepSpeedZeRoOffload initialize [end]
+[2024-03-28 16:15:15,374] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.52 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:15,374] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 21.67 GB, percent = 4.3%
+[2024-03-28 16:15:15,424] [INFO] [utils.py:800:see_memory_usage] Before creating fp16 partitions
+[2024-03-28 16:15:15,425] [INFO] [utils.py:801:see_memory_usage] MA 5.52 GB         Max_MA 5.52 GB         CA 12.75 GB         Max_CA 13 GB 
+[2024-03-28 16:15:15,425] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 21.67 GB, percent = 4.3%
+[2024-03-28 16:15:15,425] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 0, numel: 103022592
+[2024-03-28 16:15:15,425] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 0, numel: 103022592
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 1, numel: 104601600
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 1, numel: 104601600
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 2, numel: 130291712
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 2, numel: 130291712
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 3, numel: 108007424
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 3, numel: 108007424
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 4, numel: 104601600
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 4, numel: 104601600
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 5, numel: 130291712
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 5, numel: 130291712
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 6, numel: 108007424
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 6, numel: 108007424
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 7, numel: 104601600
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 7, numel: 104601600
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 8, numel: 130291712
+[2024-03-28 16:15:15,426] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 8, numel: 130291712
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 9, numel: 108007424
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 9, numel: 108007424
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 10, numel: 104601600
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 10, numel: 104601600
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 11, numel: 130291712
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 11, numel: 130291712
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 12, numel: 108007424
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 12, numel: 108007424
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 13, numel: 104601600
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 13, numel: 104601600
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 14, numel: 130291712
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 14, numel: 130291712
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 15, numel: 108007424
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 15, numel: 108007424
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 16, numel: 104601600
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 16, numel: 104601600
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 17, numel: 130291712
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 17, numel: 130291712
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 18, numel: 108007424
+[2024-03-28 16:15:15,427] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 18, numel: 108007424
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 19, numel: 104601600
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 19, numel: 104601600
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 20, numel: 130291712
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 20, numel: 130291712
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 21, numel: 108007424
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 21, numel: 108007424
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 22, numel: 104601600
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 22, numel: 104601600
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 23, numel: 130291712
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 23, numel: 130291712
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 24, numel: 108007424
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 24, numel: 108007424
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 0] ========== Param group 0, Subgroup 25, numel: 103024640
+[2024-03-28 16:15:15,428] [INFO] [stage3.py:706:_create_fp16_partitions_with_defragmentation] [Rank 1] ========== Param group 0, Subgroup 25, numel: 103024640
+[2024-03-28 16:15:17,328] [INFO] [utils.py:800:see_memory_usage] After creating fp16 partitions: 26
+[2024-03-28 16:15:17,328] [INFO] [utils.py:801:see_memory_usage] MA 5.49 GB         Max_MA 5.52 GB         CA 5.5 GB         Max_CA 13 GB 
+[2024-03-28 16:15:17,328] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 26.41 GB, percent = 5.2%
+[2024-03-28 16:15:17,436] [INFO] [utils.py:800:see_memory_usage] Before creating fp32 partitions
+[2024-03-28 16:15:17,437] [INFO] [utils.py:801:see_memory_usage] MA 5.49 GB         Max_MA 5.49 GB         CA 5.5 GB         Max_CA 5 GB 
+[2024-03-28 16:15:17,437] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 27.36 GB, percent = 5.4%
+[2024-03-28 16:15:19,036] [INFO] [utils.py:800:see_memory_usage] After creating fp32 partitions
+[2024-03-28 16:15:19,036] [INFO] [utils.py:801:see_memory_usage] MA 5.49 GB         Max_MA 5.49 GB         CA 5.5 GB         Max_CA 5 GB 
+[2024-03-28 16:15:19,037] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 43.69 GB, percent = 8.7%
+[2024-03-28 16:15:19,117] [INFO] [utils.py:800:see_memory_usage] Before initializing optimizer states
+[2024-03-28 16:15:19,118] [INFO] [utils.py:801:see_memory_usage] MA 5.49 GB         Max_MA 5.49 GB         CA 5.5 GB         Max_CA 5 GB 
+[2024-03-28 16:15:19,118] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 44.9 GB, percent = 8.9%
+[2024-03-28 16:15:23,145] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | init_optimizer_state: 4016.94
+[2024-03-28 16:15:23,212] [INFO] [utils.py:800:see_memory_usage] After initializing optimizer states
+[2024-03-28 16:15:23,212] [INFO] [utils.py:801:see_memory_usage] MA 5.49 GB         Max_MA 5.49 GB         CA 5.5 GB         Max_CA 5 GB 
+[2024-03-28 16:15:23,213] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 70.27 GB, percent = 14.0%
+[2024-03-28 16:15:23,213] [INFO] [stage3.py:520:_setup_for_real_optimizer] optimizer state initialized
+[2024-03-28 16:15:25,603] [INFO] [utils.py:800:see_memory_usage] After initializing ZeRO optimizer
+[2024-03-28 16:15:25,604] [INFO] [utils.py:801:see_memory_usage] MA 6.43 GB         Max_MA 7.2 GB         CA 13.11 GB         Max_CA 13 GB 
+[2024-03-28 16:15:25,604] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 86.63 GB, percent = 17.2%
+[2024-03-28 16:15:25,604] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = DeepSpeedCPUAdam
+<TIMER:model-and-optimizer-setup,15.524447679519653>
+[2024-03-28 16:15:25,659] [INFO] [utils.py:800:see_memory_usage] DeepSpeed Engine: Before configure LR scheduler
+[2024-03-28 16:15:25,659] [INFO] [utils.py:801:see_memory_usage] MA 6.43 GB         Max_MA 6.43 GB         CA 13.11 GB         Max_CA 13 GB 
+[2024-03-28 16:15:25,660] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 86.63 GB, percent = 17.2%
+[2024-03-28 16:15:25,660] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using client LR scheduler
+[2024-03-28 16:15:25,660] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = <megatron.optimizer_param_scheduler.OptimizerParamScheduler object at 0x147332b002b0>
+[2024-03-28 16:15:25,660] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[0.0], mom=[(0.9, 0.95)]
+[2024-03-28 16:15:25,712] [INFO] [utils.py:800:see_memory_usage] DeepSpeed Engine: Before rewriting optimizer step
+[2024-03-28 16:15:25,713] [INFO] [utils.py:801:see_memory_usage] MA 6.43 GB         Max_MA 6.43 GB         CA 13.11 GB         Max_CA 13 GB 
+[2024-03-28 16:15:25,713] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 86.63 GB, percent = 17.2%
+[2024-03-28 16:15:25,765] [INFO] [utils.py:800:see_memory_usage] DeepSpeed Engine: Before configure checkpointing
+[2024-03-28 16:15:25,765] [INFO] [utils.py:801:see_memory_usage] MA 6.43 GB         Max_MA 6.43 GB         CA 13.11 GB         Max_CA 13 GB 
+[2024-03-28 16:15:25,765] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 86.63 GB, percent = 17.2%
+[2024-03-28 16:15:25,766] [INFO] [config.py:998:print] DeepSpeedEngine configuration:
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   amp_enabled .................. False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   amp_params ................... False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   bfloat16_enabled ............. True
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   bfloat16_immediate_grad_update  False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   checkpoint_parallel_write_pipeline  False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   checkpoint_tag_validation_enabled  True
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   checkpoint_tag_validation_fail  False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x147332b00550>
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   communication_data_type ...... None
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   compile_config ............... enabled=False backend='inductor' kwargs={}
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   curriculum_enabled_legacy .... False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   curriculum_params_legacy ..... False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   data_efficiency_enabled ...... False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   dataloader_drop_last ......... False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   datastates_config ............ {
+    "enabled": null, 
+    "config": {
+    }
+}
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   disable_allgather ............ False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   dump_state ................... False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   dynamic_loss_scale_args ...... None
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   eigenvalue_enabled ........... False
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   eigenvalue_gas_boundary_resolution  1
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   eigenvalue_layer_num ......... 0
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   eigenvalue_max_iter .......... 100
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   eigenvalue_stability ......... 1e-06
+[2024-03-28 16:15:25,766] [INFO] [config.py:1002:print]   eigenvalue_tol ............... 0.01
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   eigenvalue_verbose ........... False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   elasticity_enabled ........... False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   fp16_auto_cast ............... None
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   fp16_enabled ................. False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   fp16_master_weights_and_gradients  False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   global_rank .................. 0
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   grad_accum_dtype ............. bf16
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   gradient_accumulation_steps .. 1
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   gradient_clipping ............ 0.0
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   gradient_predivide_factor .... 1.0
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   graph_harvesting ............. False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   initial_dynamic_scale ........ 1
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   load_universal_checkpoint .... False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   loss_scale ................... 1.0
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   memory_breakdown ............. True
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   mics_hierarchial_params_gather  False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   mics_shard_size .............. -1
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') enabled=False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   optimizer_legacy_fusion ...... False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   optimizer_name ............... None
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   optimizer_params ............. None
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   pld_enabled .................. False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   pld_params ................... False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   prescale_gradients ........... False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   scheduler_name ............... None
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   scheduler_params ............. None
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   seq_parallel_communication_data_type  torch.float32
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   sparse_attention ............. None
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   sparse_gradients_enabled ..... False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   steps_per_print .............. 1
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   train_batch_size ............. 8
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   train_micro_batch_size_per_gpu  4
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   use_data_before_expert_parallel_  False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   use_node_local_storage ....... False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   wall_clock_breakdown ......... True
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   weight_quantization_config ... None
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   world_size ................... 2
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   zero_allow_untested_optimizer  False
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   zero_config .................. stage=3 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500,000,000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500,000,000 overlap_comm=True load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=DeepSpeedZeroOffloadOptimizerConfig(device='cpu', nvme_path=None, buffer_count=4, pin_memory=True, pipeline=False, pipeline_read=False, pipeline_write=False, fast_init=False, ratio=1.0, prefetch_optimizer=False, part_grads_async=True, prefetch_optimizer_gap=5) sub_group_size=100000000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50,000,000 param_persistence_threshold=100,000 model_persistence_threshold=sys.maxsize max_live_parameters=1,000,000,000 max_reuse_distance=1,000,000,000 gather_16bit_weights_on_model_save=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   zero_enabled ................. True
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   zero_force_ds_cpu_optimizer .. True
+[2024-03-28 16:15:25,767] [INFO] [config.py:1002:print]   zero_optimization_stage ...... 3
+[2024-03-28 16:15:25,767] [INFO] [config.py:988:print_user_config]   json = {
+    "train_batch_size": 8, 
+    "train_micro_batch_size_per_gpu": 4, 
+    "steps_per_print": 1, 
+    "zero_optimization": {
+        "stage": 3, 
+        "offload_optimizer": {
+            "device": "cpu", 
+            "ratio": 1, 
+            "pin_memory": true, 
+            "prefetch_optimizer": 0, 
+            "part_grads_async": 1, 
+            "prefetch_optimizer_gap": 5
+        }, 
+        "sub_group_size": 1.000000e+08
+    }, 
+    "bf16": {
+        "enabled": true
+    }, 
+    "data_types": {
+        "grad_accum_dtype": "bf16"
+    }, 
+    "wall_clock_breakdown": true, 
+    "memory_breakdown": true, 
+    "flops_profiler": {
+        "enabled": false
+    }
+}
+<TIMER:model-and-optimizer-setup,15.680677652359009>
+[after model, optimizer, and learning rate scheduler are built] datetime: 2024-03-28 16:15:25 
+> building train, validation, and test datasets ...
+ > datasets target sizes (minimum size):
+    train:      80
+    validation: 0
+    test:       0
+> building train, validation, and test datasets for GPT ...
+Single data path provided for train, valid & test
+ > building dataset index ...
+    reading sizes...
+    reading pointers...
+    reading document index...
+    creating numpy buffer of mmap...
+    creating memory view of numpy buffer...
+ > finished creating indexed dataset in 0.000800 seconds
+    number of documents: 79000
+ > dataset split:
+    train:
+     document indices in [0, 74971) total of 74971 documents
+    validation:
+     document indices in [74971, 78921) total of 3950 documents
+    test:
+     document indices in [78921, 79000) total of 79 documents
+ > loading doc-idx mapping from /home/am6429/dl-io/datasets/index-cache/99d0bc0fb71b0d545f90415457b76899_doc_idx.npy
+ > loading sample-idx mapping from /home/am6429/dl-io/datasets/index-cache/99d0bc0fb71b0d545f90415457b76899_sample_idx.npy
+ > loading shuffle-idx mapping from /home/am6429/dl-io/datasets/index-cache/99d0bc0fb71b0d545f90415457b76899_shuffle_idx.npy
+    loaded indexed file in 0.005 seconds
+    total number of samples: 108448
+    total number of epochs: 1
+ > loading doc-idx mapping from /home/am6429/dl-io/datasets/index-cache/4ea6d225cc7d60d779e46cebdb4c487e_doc_idx.npy
+ > loading sample-idx mapping from /home/am6429/dl-io/datasets/index-cache/4ea6d225cc7d60d779e46cebdb4c487e_sample_idx.npy
+ > loading shuffle-idx mapping from /home/am6429/dl-io/datasets/index-cache/4ea6d225cc7d60d779e46cebdb4c487e_shuffle_idx.npy
+    loaded indexed file in 0.001 seconds
+    total number of samples: 5792
+    total number of epochs: 1
+ > loading doc-idx mapping from /home/am6429/dl-io/datasets/index-cache/14bf7f3c9438c6348d40db0f3af62a29_doc_idx.npy
+ > loading sample-idx mapping from /home/am6429/dl-io/datasets/index-cache/14bf7f3c9438c6348d40db0f3af62a29_sample_idx.npy
+ > loading shuffle-idx mapping from /home/am6429/dl-io/datasets/index-cache/14bf7f3c9438c6348d40db0f3af62a29_shuffle_idx.npy
+    loaded indexed file in 0.001 seconds
+    total number of samples: 185
+    total number of epochs: 1
+> finished creating GPT datasets ...
+<TIMER:train/valid/test-data-iterators-setup,0.3323631286621094>
+<TIMER:train/valid/test-data-iterators-setup,0.3328530788421631>
+[after dataloaders are built] datetime: 2024-03-28 16:15:26 
+done with setup ...
+(min, max) time across ranks (ms):
+    model-and-optimizer-setup ......................: (15524.45, 15680.68)
+    train/valid/test-data-iterators-setup ..........: (332.36, 332.85)
+training ...
+[before training begins] datetime: 2024-03-28 16:15:26 
+[before the start of training step] datetime: 2024-03-28 16:15:26 
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:15:26,217] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:15:26,218] [INFO] [utils.py:801:see_memory_usage] MA 6.43 GB         Max_MA 6.43 GB         CA 6.59 GB         Max_CA 13 GB 
+[2024-03-28 16:15:26,218] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 87.66 GB, percent = 17.4%
+[2024-03-28 16:15:26,329] [INFO] [checkpointing.py:539:forward] Activation Checkpointing Information
+[2024-03-28 16:15:26,329] [INFO] [checkpointing.py:540:forward] ----Partition Activations False, CPU CHECKPOINTING False
+[2024-03-28 16:15:26,329] [INFO] [checkpointing.py:541:forward] ----contiguous Memory Checkpointing False with 32 total layers
+[2024-03-28 16:15:26,329] [INFO] [checkpointing.py:543:forward] ----Synchronization False
+[2024-03-28 16:15:26,329] [INFO] [checkpointing.py:544:forward] ----Profiling time in checkpointing False
+[2024-03-28 16:15:27,387] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:15:27,387] [INFO] [utils.py:801:see_memory_usage] MA 11.1 GB         Max_MA 13.79 GB         CA 15.33 GB         Max_CA 15 GB 
+[2024-03-28 16:15:27,387] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 87.74 GB, percent = 17.4%
+[2024-03-28 16:15:27,453] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:15:27,453] [INFO] [utils.py:801:see_memory_usage] MA 11.1 GB         Max_MA 11.1 GB         CA 11.13 GB         Max_CA 15 GB 
+[2024-03-28 16:15:27,453] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 87.74 GB, percent = 17.4%
+[2024-03-28 16:15:29,585] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:15:29,585] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 13.44 GB         CA 8.37 GB         Max_CA 19 GB 
+[2024-03-28 16:15:29,585] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 87.78 GB, percent = 17.4%
+[2024-03-28 16:15:29,643] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:15:29,643] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:15:29,643] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 87.78 GB, percent = 17.4%
+[2024-03-28 16:15:33,866] [INFO] [stage3.py:2243:step] With missing steps outer loop took 4.165805816650391
+[2024-03-28 16:15:33,867] [INFO] [stage3.py:2251:step] Full outer step loop took 4.166522264480591
+[2024-03-28 16:15:33,920] [INFO] [stage3.py:2243:step] With missing steps outer loop took 4.218962907791138
+[2024-03-28 16:15:33,920] [INFO] [stage3.py:2251:step] Full outer step loop took 4.21911883354187
+[2024-03-28 16:15:33,923] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 4219.28
+[2024-03-28 16:15:33,923] [INFO] [stage3.py:2277:step] End to end step took 4.2224647998809814
+[2024-03-28 16:15:33,923] [INFO] [stage3.py:2277:step] End to end step took 4.222721099853516
+[2024-03-28 16:15:33,923] [INFO] [logging.py:96:log_dist] [Rank 0] step=1, skipped=0, lr=[0.0003], mom=[(0.9, 0.95)]
+[2024-03-28 16:15:33,923] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 1130.12 | bwd_microstep: 2047.71 | bwd_inner_microstep: 1934.87 | bwd_allreduce_microstep: 112.74 | step_microstep: 4279.91
+[2024-03-28 16:15:33,924] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 1130.12 | bwd: 2047.70 | bwd_inner: 1934.88 | bwd_allreduce: 112.74 | step: 4279.91
+[2024-03-28 16:15:34,001] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:15:34,002] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:34,002] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.84 GB, percent = 30.6%
+<TIMER:interval-time,7.895055532455444>
+<TIMER:interval-time,7.895059585571289>
+ elapsed_time 7.895056 | consumed samples:            8 | consumed tokens:        16384 | elapsed time per iteration (ms): 7895.1 | learning rate: 3.000E-04 | global batch size:     8 | lm loss: 1.164385E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.013 | TFLOPs: 59.22 |
+[Rank 0] (after 1 iterations) memory (MB) | allocated: 7620.7607421875 | max allocated: 7620.76123046875 | reserved: 7776.0 | max reserved: 7776.0
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:15:34,073] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:15:34,074] [INFO] [utils.py:801:see_memory_usage] MA 7.45 GB         Max_MA 7.45 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:34,074] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.88 GB, percent = 30.6%
+[2024-03-28 16:15:34,807] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:15:34,807] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 16.07 GB         CA 18.81 GB         Max_CA 19 GB 
+[2024-03-28 16:15:34,807] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:34,872] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:15:34,872] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 13.77 GB         CA 13.88 GB         Max_CA 19 GB 
+[2024-03-28 16:15:34,873] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:36,931] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:15:36,931] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 15.67 GB         CA 8.37 GB         Max_CA 22 GB 
+[2024-03-28 16:15:36,932] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.88 GB, percent = 30.6%
+[2024-03-28 16:15:36,991] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:15:36,991] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:15:36,991] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.88 GB, percent = 30.6%
+[2024-03-28 16:15:40,249] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.2428808212280273
+[2024-03-28 16:15:40,250] [INFO] [stage3.py:2251:step] Full outer step loop took 3.2430758476257324
+[2024-03-28 16:15:40,262] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.25553822517395
+[2024-03-28 16:15:40,262] [INFO] [stage3.py:2251:step] Full outer step loop took 3.2556862831115723
+[2024-03-28 16:15:40,265] [INFO] [stage3.py:2277:step] End to end step took 3.258791208267212
+[2024-03-28 16:15:40,265] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 3255.81
+[2024-03-28 16:15:40,266] [INFO] [stage3.py:2277:step] End to end step took 3.258958578109741
+[2024-03-28 16:15:40,266] [INFO] [logging.py:96:log_dist] [Rank 0] step=2, skipped=0, lr=[0.0002918585038060976], mom=[(0.9, 0.95)]
+[2024-03-28 16:15:40,266] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 690.55 | bwd_microstep: 1965.55 | bwd_inner_microstep: 1817.66 | bwd_allreduce_microstep: 147.82 | step_microstep: 3274.49
+[2024-03-28 16:15:40,266] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 690.53 | bwd: 1965.55 | bwd_inner: 1817.65 | bwd_allreduce: 147.83 | step: 3274.49
+[2024-03-28 16:15:40,348] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:15:40,348] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:40,348] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+<TIMER:interval-time,6.346251726150513>
+<TIMER:interval-time,6.346266746520996>
+ elapsed_time 6.346252 | consumed samples:           16 | consumed tokens:        32768 | elapsed time per iteration (ms): 6346.3 | learning rate: 2.919E-04 | global batch size:     8 | lm loss: 1.162148E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.261 | TFLOPs: 73.67 |
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:15:40,416] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:15:40,416] [INFO] [utils.py:801:see_memory_usage] MA 7.45 GB         Max_MA 7.45 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:40,416] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:41,133] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:15:41,134] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 16.07 GB         CA 18.79 GB         Max_CA 19 GB 
+[2024-03-28 16:15:41,134] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:41,197] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:15:41,197] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 13.77 GB         CA 14.06 GB         Max_CA 19 GB 
+[2024-03-28 16:15:41,197] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:43,277] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:15:43,278] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 15.67 GB         CA 8.37 GB         Max_CA 22 GB 
+[2024-03-28 16:15:43,278] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:43,334] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:15:43,335] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:15:43,335] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:46,695] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.3446707725524902
+[2024-03-28 16:15:46,695] [INFO] [stage3.py:2251:step] Full outer step loop took 3.3448216915130615
+[2024-03-28 16:15:46,703] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.3527183532714844
+[2024-03-28 16:15:46,703] [INFO] [stage3.py:2251:step] Full outer step loop took 3.3528788089752197
+[2024-03-28 16:15:46,706] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 3344.96
+[2024-03-28 16:15:46,706] [INFO] [stage3.py:2277:step] End to end step took 3.3557193279266357
+[2024-03-28 16:15:46,706] [INFO] [logging.py:96:log_dist] [Rank 0] step=3, skipped=0, lr=[0.00026841599982106197], mom=[(0.9, 0.95)]
+[2024-03-28 16:15:46,706] [INFO] [stage3.py:2277:step] End to end step took 3.3561928272247314
+[2024-03-28 16:15:46,707] [INFO] [timer.py:260:stop] epoch=0/micro_step=3/global_step=3, RunningAvgSamplesPerSec=1.27198242128824, CurrSamplesPerSec=1.27198242128824, MemAllocated=7.44GB, MaxMemAllocated=8.21GB
+[2024-03-28 16:15:46,707] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 677.81 | bwd_microstep: 1992.31 | bwd_inner_microstep: 1815.89 | bwd_allreduce_microstep: 176.35 | step_microstep: 3371.70
+[2024-03-28 16:15:46,707] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 677.80 | bwd: 1992.31 | bwd_inner: 1815.89 | bwd_allreduce: 176.36 | step: 3371.71
+[2024-03-28 16:15:46,790] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:15:46,791] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:46,791] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+<TIMER:interval-time,6.4428911209106445>
+<TIMER:interval-time,6.442912578582764>
+ elapsed_time 6.442891 | consumed samples:           24 | consumed tokens:        49152 | elapsed time per iteration (ms): 6442.9 | learning rate: 2.684E-04 | global batch size:     8 | lm loss: 2.497954E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.242 | TFLOPs: 72.56 |
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:15:46,862] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:15:46,862] [INFO] [utils.py:801:see_memory_usage] MA 7.45 GB         Max_MA 7.45 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:46,863] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:47,567] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:15:47,568] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 16.07 GB         CA 18.78 GB         Max_CA 19 GB 
+[2024-03-28 16:15:47,568] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:47,633] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:15:47,634] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 13.77 GB         CA 14.06 GB         Max_CA 19 GB 
+[2024-03-28 16:15:47,634] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:49,717] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:15:49,718] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 15.67 GB         CA 8.37 GB         Max_CA 22 GB 
+[2024-03-28 16:15:49,718] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:49,775] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:15:49,776] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:15:49,776] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:53,166] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.3740503787994385
+[2024-03-28 16:15:53,166] [INFO] [stage3.py:2251:step] Full outer step loop took 3.3742361068725586
+[2024-03-28 16:15:53,172] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.3810057640075684
+[2024-03-28 16:15:53,172] [INFO] [stage3.py:2251:step] Full outer step loop took 3.381159782409668
+[2024-03-28 16:15:53,175] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 3374.39
+[2024-03-28 16:15:53,176] [INFO] [stage3.py:2277:step] End to end step took 3.384047031402588
+[2024-03-28 16:15:53,176] [INFO] [stage3.py:2277:step] End to end step took 3.3844611644744873
+[2024-03-28 16:15:53,176] [INFO] [logging.py:96:log_dist] [Rank 0] step=4, skipped=0, lr=[0.00023249999999999996], mom=[(0.9, 0.95)]
+[2024-03-28 16:15:53,176] [INFO] [timer.py:260:stop] epoch=0/micro_step=4/global_step=4, RunningAvgSamplesPerSec=1.2696280901049743, CurrSamplesPerSec=1.2672824581533833, MemAllocated=7.44GB, MaxMemAllocated=8.21GB
+[2024-03-28 16:15:53,177] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 666.94 | bwd_microstep: 1993.14 | bwd_inner_microstep: 1816.80 | bwd_allreduce_microstep: 176.27 | step_microstep: 3400.13
+[2024-03-28 16:15:53,177] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 666.93 | bwd: 1993.14 | bwd_inner: 1816.80 | bwd_allreduce: 176.28 | step: 3400.12
+[2024-03-28 16:15:53,292] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:15:53,293] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:53,293] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+<TIMER:interval-time,6.501636743545532>
+<TIMER:interval-time,6.501652479171753>
+ elapsed_time 6.501637 | consumed samples:           32 | consumed tokens:        65536 | elapsed time per iteration (ms): 6501.6 | learning rate: 2.325E-04 | global batch size:     8 | lm loss: 1.936089E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.230 | TFLOPs: 71.91 |
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:15:53,364] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:15:53,364] [INFO] [utils.py:801:see_memory_usage] MA 7.45 GB         Max_MA 7.45 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:53,364] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:54,065] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:15:54,066] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 16.07 GB         CA 18.79 GB         Max_CA 19 GB 
+[2024-03-28 16:15:54,066] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:54,133] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:15:54,133] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 13.77 GB         CA 14.06 GB         Max_CA 19 GB 
+[2024-03-28 16:15:54,133] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:56,215] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:15:56,215] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 15.67 GB         CA 8.37 GB         Max_CA 22 GB 
+[2024-03-28 16:15:56,215] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:56,276] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:15:56,276] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:15:56,276] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:15:59,347] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.055783271789551
+[2024-03-28 16:15:59,347] [INFO] [stage3.py:2251:step] Full outer step loop took 3.0559520721435547
+[2024-03-28 16:15:59,412] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.1201870441436768
+[2024-03-28 16:15:59,412] [INFO] [stage3.py:2251:step] Full outer step loop took 3.1203384399414062
+[2024-03-28 16:15:59,415] [INFO] [stage3.py:2277:step] End to end step took 3.123530149459839
+[2024-03-28 16:15:59,415] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 3120.47
+[2024-03-28 16:15:59,415] [INFO] [stage3.py:2277:step] End to end step took 3.123814344406128
+[2024-03-28 16:15:59,416] [INFO] [logging.py:96:log_dist] [Rank 0] step=5, skipped=0, lr=[0.0001884425039850356], mom=[(0.9, 0.95)]
+[2024-03-28 16:15:59,416] [INFO] [timer.py:260:stop] epoch=0/micro_step=5/global_step=5, RunningAvgSamplesPerSec=1.286691390119201, CurrSamplesPerSec=1.3222319400767186, MemAllocated=7.44GB, MaxMemAllocated=8.21GB
+[2024-03-28 16:15:59,416] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 660.53 | bwd_microstep: 1990.13 | bwd_inner_microstep: 1813.74 | bwd_allreduce_microstep: 176.32 | step_microstep: 3139.64
+[2024-03-28 16:15:59,416] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 660.52 | bwd: 1990.13 | bwd_inner: 1813.74 | bwd_allreduce: 176.33 | step: 3139.64
+[2024-03-28 16:15:59,502] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:15:59,502] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:59,502] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+<TIMER:interval-time,6.209134817123413>
+<TIMER:interval-time,6.209155321121216>
+ elapsed_time 6.209135 | consumed samples:           40 | consumed tokens:        81920 | elapsed time per iteration (ms): 6209.1 | learning rate: 1.884E-04 | global batch size:     8 | lm loss: 1.436808E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.288 | TFLOPs: 75.30 |
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:15:59,575] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:15:59,576] [INFO] [utils.py:801:see_memory_usage] MA 7.45 GB         Max_MA 7.45 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:15:59,576] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:00,280] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:16:00,281] [INFO] [utils.py:801:see_memory_usage] MA 13.76 GB         Max_MA 16.07 GB         CA 18.79 GB         Max_CA 19 GB 
+[2024-03-28 16:16:00,281] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.91 GB, percent = 30.6%
+[2024-03-28 16:16:00,358] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:16:00,358] [INFO] [utils.py:801:see_memory_usage] MA 13.76 GB         Max_MA 13.76 GB         CA 13.89 GB         Max_CA 19 GB 
+[2024-03-28 16:16:00,358] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.91 GB, percent = 30.6%
+[2024-03-28 16:16:02,414] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:16:02,414] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 15.67 GB         CA 8.37 GB         Max_CA 22 GB 
+[2024-03-28 16:16:02,414] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:02,476] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:16:02,476] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:16:02,476] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:05,538] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.0467758178710938
+[2024-03-28 16:16:05,539] [INFO] [stage3.py:2251:step] Full outer step loop took 3.046973943710327
+[2024-03-28 16:16:05,659] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.1671345233917236
+[2024-03-28 16:16:05,659] [INFO] [stage3.py:2251:step] Full outer step loop took 3.167287826538086
+[2024-03-28 16:16:05,662] [INFO] [stage3.py:2277:step] End to end step took 3.1706478595733643
+[2024-03-28 16:16:05,662] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 3167.42
+[2024-03-28 16:16:05,662] [INFO] [stage3.py:2277:step] End to end step took 3.17077898979187
+[2024-03-28 16:16:05,663] [INFO] [logging.py:96:log_dist] [Rank 0] step=6, skipped=0, lr=[0.0001415574960149644], mom=[(0.9, 0.95)]
+[2024-03-28 16:16:05,663] [INFO] [timer.py:260:stop] epoch=0/micro_step=6/global_step=6, RunningAvgSamplesPerSec=1.2935325151410535, CurrSamplesPerSec=1.3144994426357501, MemAllocated=7.44GB, MaxMemAllocated=8.21GB
+[2024-03-28 16:16:05,663] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 662.63 | bwd_microstep: 1961.21 | bwd_inner_microstep: 1813.44 | bwd_allreduce_microstep: 147.70 | step_microstep: 3186.76
+[2024-03-28 16:16:05,663] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 662.61 | bwd: 1961.21 | bwd_inner: 1813.44 | bwd_allreduce: 147.71 | step: 3186.76
+[2024-03-28 16:16:05,751] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:16:05,751] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:16:05,751] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+<TIMER:interval-time,6.249056577682495>
+<TIMER:interval-time,6.249080419540405>
+ elapsed_time 6.249057 | consumed samples:           48 | consumed tokens:        98304 | elapsed time per iteration (ms): 6249.1 | learning rate: 1.416E-04 | global batch size:     8 | lm loss: 1.658762E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.280 | TFLOPs: 74.82 |
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:16:05,830] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:16:05,830] [INFO] [utils.py:801:see_memory_usage] MA 7.45 GB         Max_MA 7.45 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:16:05,830] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:06,531] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:16:06,532] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 16.07 GB         CA 18.79 GB         Max_CA 19 GB 
+[2024-03-28 16:16:06,532] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:06,599] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:16:06,599] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 13.77 GB         CA 14.06 GB         Max_CA 19 GB 
+[2024-03-28 16:16:06,599] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:08,681] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:16:08,682] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 15.67 GB         CA 8.37 GB         Max_CA 22 GB 
+[2024-03-28 16:16:08,682] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:08,743] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:16:08,743] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:16:08,743] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:12,105] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.3466949462890625
+[2024-03-28 16:16:12,106] [INFO] [stage3.py:2251:step] Full outer step loop took 3.3468427658081055
+[2024-03-28 16:16:12,113] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.3544209003448486
+[2024-03-28 16:16:12,113] [INFO] [stage3.py:2251:step] Full outer step loop took 3.354581117630005
+[2024-03-28 16:16:12,116] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 3346.97
+[2024-03-28 16:16:12,116] [INFO] [stage3.py:2277:step] End to end step took 3.357492685317993
+[2024-03-28 16:16:12,116] [INFO] [logging.py:96:log_dist] [Rank 0] step=7, skipped=0, lr=[9.750000000000001e-05], mom=[(0.9, 0.95)]
+[2024-03-28 16:16:12,117] [INFO] [stage3.py:2277:step] End to end step took 3.3580315113067627
+[2024-03-28 16:16:12,117] [INFO] [timer.py:260:stop] epoch=0/micro_step=7/global_step=7, RunningAvgSamplesPerSec=1.2893207209362594, CurrSamplesPerSec=1.2727442932828763, MemAllocated=7.44GB, MaxMemAllocated=8.21GB
+[2024-03-28 16:16:12,117] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 660.19 | bwd_microstep: 1988.52 | bwd_inner_microstep: 1812.15 | bwd_allreduce_microstep: 176.31 | step_microstep: 3373.39
+[2024-03-28 16:16:12,117] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 660.18 | bwd: 1988.52 | bwd_inner: 1812.14 | bwd_allreduce: 176.32 | step: 3373.39
+[2024-03-28 16:16:12,203] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:16:12,203] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:16:12,203] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+<TIMER:interval-time,6.451657295227051>
+<TIMER:interval-time,6.451677322387695>
+ elapsed_time 6.451657 | consumed samples:           56 | consumed tokens:       114688 | elapsed time per iteration (ms): 6451.7 | learning rate: 9.750E-05 | global batch size:     8 | lm loss: 1.274021E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.240 | TFLOPs: 72.47 |
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:16:12,274] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:16:12,275] [INFO] [utils.py:801:see_memory_usage] MA 7.45 GB         Max_MA 7.45 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:16:12,275] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:12,976] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:16:12,977] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 16.07 GB         CA 18.78 GB         Max_CA 19 GB 
+[2024-03-28 16:16:12,977] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:13,043] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:16:13,044] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 13.77 GB         CA 14.06 GB         Max_CA 19 GB 
+[2024-03-28 16:16:13,044] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:15,118] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:16:15,119] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 15.67 GB         CA 8.37 GB         Max_CA 22 GB 
+[2024-03-28 16:16:15,119] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:15,180] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:16:15,180] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:16:15,180] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.89 GB, percent = 30.6%
+[2024-03-28 16:16:18,454] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.2586421966552734
+[2024-03-28 16:16:18,455] [INFO] [stage3.py:2251:step] Full outer step loop took 3.258833169937134
+[2024-03-28 16:16:18,588] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.3921306133270264
+[2024-03-28 16:16:18,588] [INFO] [stage3.py:2251:step] Full outer step loop took 3.3922781944274902
+[2024-03-28 16:16:18,591] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 3392.40
+[2024-03-28 16:16:18,591] [INFO] [stage3.py:2277:step] End to end step took 3.3955471515655518
+[2024-03-28 16:16:18,591] [INFO] [stage3.py:2277:step] End to end step took 3.395585298538208
+[2024-03-28 16:16:18,591] [INFO] [logging.py:96:log_dist] [Rank 0] step=8, skipped=0, lr=[6.158400017893797e-05], mom=[(0.9, 0.95)]
+[2024-03-28 16:16:18,592] [INFO] [timer.py:260:stop] epoch=0/micro_step=8/global_step=8, RunningAvgSamplesPerSec=1.285477818590795, CurrSamplesPerSec=1.2666018815858373, MemAllocated=7.44GB, MaxMemAllocated=8.21GB
+[2024-03-28 16:16:18,592] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 663.15 | bwd_microstep: 1981.67 | bwd_inner_microstep: 1805.39 | bwd_allreduce_microstep: 176.22 | step_microstep: 3411.40
+[2024-03-28 16:16:18,592] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 663.13 | bwd: 1981.67 | bwd_inner: 1805.38 | bwd_allreduce: 176.23 | step: 3411.40
+[2024-03-28 16:16:18,679] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:16:18,680] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:16:18,680] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+<TIMER:interval-time,6.476364612579346>
+<TIMER:interval-time,6.476387977600098>
+ elapsed_time 6.476365 | consumed samples:           64 | consumed tokens:       131072 | elapsed time per iteration (ms): 6476.4 | learning rate: 6.158E-05 | global batch size:     8 | lm loss: 1.231187E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.235 | TFLOPs: 72.19 |
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:16:18,754] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:16:18,754] [INFO] [utils.py:801:see_memory_usage] MA 7.45 GB         Max_MA 7.45 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:16:18,754] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:19,452] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:16:19,452] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 16.07 GB         CA 18.79 GB         Max_CA 19 GB 
+[2024-03-28 16:16:19,452] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:19,519] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:16:19,520] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 13.77 GB         CA 14.06 GB         Max_CA 19 GB 
+[2024-03-28 16:16:19,520] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:21,598] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:16:21,599] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 15.67 GB         CA 8.37 GB         Max_CA 22 GB 
+[2024-03-28 16:16:21,599] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:21,658] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:16:21,658] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:16:21,658] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:24,810] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.136366367340088
+[2024-03-28 16:16:24,811] [INFO] [stage3.py:2251:step] Full outer step loop took 3.137010097503662
+[2024-03-28 16:16:24,833] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.159273386001587
+[2024-03-28 16:16:24,833] [INFO] [stage3.py:2251:step] Full outer step loop took 3.1594178676605225
+[2024-03-28 16:16:24,836] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 3159.54
+[2024-03-28 16:16:24,836] [INFO] [stage3.py:2277:step] End to end step took 3.1627144813537598
+[2024-03-28 16:16:24,837] [INFO] [stage3.py:2277:step] End to end step took 3.162855386734009
+[2024-03-28 16:16:24,837] [INFO] [logging.py:96:log_dist] [Rank 0] step=9, skipped=0, lr=[3.814149619390238e-05], mom=[(0.9, 0.95)]
+[2024-03-28 16:16:24,837] [INFO] [timer.py:260:stop] epoch=0/micro_step=9/global_step=9, RunningAvgSamplesPerSec=1.2896634872035693, CurrSamplesPerSec=1.315361324366851, MemAllocated=7.44GB, MaxMemAllocated=8.21GB
+[2024-03-28 16:16:24,837] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 658.88 | bwd_microstep: 1988.66 | bwd_inner_microstep: 1812.21 | bwd_allreduce_microstep: 176.39 | step_microstep: 3178.77
+[2024-03-28 16:16:24,838] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 658.87 | bwd: 1988.66 | bwd_inner: 1812.20 | bwd_allreduce: 176.39 | step: 3178.78
+[2024-03-28 16:16:24,925] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:16:24,926] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:16:24,926] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+<TIMER:interval-time,6.246189594268799>
+<TIMER:interval-time,6.246289014816284>
+ elapsed_time 6.246289 | consumed samples:           72 | consumed tokens:       147456 | elapsed time per iteration (ms): 6246.3 | learning rate: 3.814E-05 | global batch size:     8 | lm loss: 1.211532E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.281 | TFLOPs: 74.85 |
+In train_step in training.py!!!!!... True, False
+[2024-03-28 16:16:25,008] [INFO] [utils.py:800:see_memory_usage] Engine before forward
+[2024-03-28 16:16:25,008] [INFO] [utils.py:801:see_memory_usage] MA 7.45 GB         Max_MA 7.45 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:16:25,008] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:25,706] [INFO] [utils.py:800:see_memory_usage] Engine after forward
+[2024-03-28 16:16:25,707] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 16.07 GB         CA 18.78 GB         Max_CA 19 GB 
+[2024-03-28 16:16:25,707] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:25,772] [INFO] [utils.py:800:see_memory_usage] Engine before backward
+[2024-03-28 16:16:25,772] [INFO] [utils.py:801:see_memory_usage] MA 13.77 GB         Max_MA 13.77 GB         CA 14.06 GB         Max_CA 19 GB 
+[2024-03-28 16:16:25,772] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:27,853] [INFO] [utils.py:800:see_memory_usage] Engine after backward
+[2024-03-28 16:16:27,853] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 15.67 GB         CA 8.37 GB         Max_CA 22 GB 
+[2024-03-28 16:16:27,853] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:27,913] [INFO] [utils.py:800:see_memory_usage] Engine before step
+[2024-03-28 16:16:27,914] [INFO] [utils.py:801:see_memory_usage] MA 8.21 GB         Max_MA 8.21 GB         CA 8.37 GB         Max_CA 8 GB 
+[2024-03-28 16:16:27,914] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+[2024-03-28 16:16:31,134] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.2048749923706055
+[2024-03-28 16:16:31,135] [INFO] [stage3.py:2251:step] Full outer step loop took 3.2056703567504883
+[2024-03-28 16:16:31,198] [INFO] [stage3.py:2243:step] With missing steps outer loop took 3.269012689590454
+[2024-03-28 16:16:31,198] [INFO] [stage3.py:2251:step] Full outer step loop took 3.269160509109497
+[2024-03-28 16:16:31,202] [INFO] [stage3.py:2277:step] End to end step took 3.2724344730377197
+[2024-03-28 16:16:31,202] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | optimizer_step: 3269.29
+[2024-03-28 16:16:31,202] [INFO] [stage3.py:2277:step] End to end step took 3.2725868225097656
+[2024-03-28 16:16:31,202] [INFO] [logging.py:96:log_dist] [Rank 0] step=10, skipped=0, lr=[3e-05], mom=[(0.9, 0.95)]
+[2024-03-28 16:16:31,202] [INFO] [timer.py:260:stop] epoch=0/micro_step=10/global_step=10, RunningAvgSamplesPerSec=1.289925053960784, CurrSamplesPerSec=1.2917589963076357, MemAllocated=7.44GB, MaxMemAllocated=8.21GB
+[2024-03-28 16:16:31,203] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd_microstep: 658.14 | bwd_microstep: 1988.26 | bwd_inner_microstep: 1811.87 | bwd_allreduce_microstep: 176.32 | step_microstep: 3288.68
+[2024-03-28 16:16:31,203] [INFO] [logging.py:96:log_dist] [Rank 0] time (ms) | fwd: 658.13 | bwd: 1988.25 | bwd_inner: 1811.87 | bwd_allreduce: 176.32 | step: 3288.67
+[2024-03-28 16:16:31,290] [INFO] [utils.py:800:see_memory_usage] Engine after step
+[2024-03-28 16:16:31,291] [INFO] [utils.py:801:see_memory_usage] MA 7.44 GB         Max_MA 8.21 GB         CA 7.59 GB         Max_CA 8 GB 
+[2024-03-28 16:16:31,291] [INFO] [utils.py:808:see_memory_usage] CPU Virtual Memory:  used = 153.9 GB, percent = 30.6%
+<TIMER:interval-time,6.364431142807007>
+<TIMER:interval-time,6.364489555358887>
+ elapsed_time 6.364431 | consumed samples:           80 | consumed tokens:       163840 | elapsed time per iteration (ms): 6364.4 | learning rate: 3.000E-05 | global batch size:     8 | lm loss: 1.220513E+01 | loss scale: 1.0 | actual seqlen:  2048 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 1.257 | TFLOPs: 73.46 |
+<<<only_train:65.18926239013672>>>
+<<<only_train:65.18945813179016>>>
+[after training ends] datetime: 2024-03-28 16:16:31 
+<<<full_time:65.1894383430481>>>
+<<<full_time:65.18964004516602>>>
+[2024-03-28 16:16:34,889] [INFO] [launch.py:348:main] Process 17996 exits successfully.
+[2024-03-28 16:16:35,890] [INFO] [launch.py:348:main] Process 17997 exits successfully.
