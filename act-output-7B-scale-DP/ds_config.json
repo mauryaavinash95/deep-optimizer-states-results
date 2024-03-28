@@ -1,5 +1,5 @@
 {
-	"train_batch_size": 32,
+	"train_batch_size": 64,
 	"train_micro_batch_size_per_gpu": 4,
 	"steps_per_print": 1,
 	"zero_optimization": {
@@ -8,7 +8,7 @@
             "device": "cpu",
             "ratio": 1,
             "pin_memory": true,
-            "prefetch_optimizer": 1,
+            "prefetch_optimizer": 0,
             "part_grads_async": 1,
             "prefetch_optimizer_gap": 5
         },
